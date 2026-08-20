@@ -1,0 +1,26 @@
+# Maven build output
+target/
+
+# Java compiled files
+*.class
+
+# Maven Wrapper cache and generated files
+.mvn/wrapper/maven-wrapper.jar
+
+# IDE settings
+.idea/
+*.iml
+.classpath
+.project
+.settings/
+.vscode/*
+
+# Logs and temporary files
+*.log
+*.tmp
+*.swp
+
+# Operating system files
+.DS_Store
+Thumbs.db
+desktop.ini

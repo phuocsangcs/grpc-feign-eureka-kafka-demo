@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package order;
+
+option java_package = "com.example.grpcdemo.order";
+option java_multiple_files = true;
+
+// Service quản lý order - chạy độc lập, expose ở gRPC port 9092
+service OrderService {
+  rpc CreateOrder (CreateOrderRequest) returns (CreateOrderResponse);
+}
+
+message CreateOrderRequest {
+  int32 user_id = 1;
+  string product = 2;
+}
+
+message CreateOrderResponse {
+  int32 order_id = 1;
+  string status = 2;
+  string user_name = 3;
+}

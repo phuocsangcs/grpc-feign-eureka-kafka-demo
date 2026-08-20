@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package user;
+
+option java_package = "com.example.grpcdemo.user";
+option java_multiple_files = true;
+
+// Copy của user.proto từ user-service - order-service cần file này để
+// sinh ra UserServiceGrpc.UserServiceBlockingStub dùng làm gRPC client.
+// Trong dự án thực tế, nên publish .proto này thành 1 shared artifact
+// (vd: "grpc-contracts" module) thay vì copy tay như demo này.
+service UserService {
+  rpc GetUser (GetUserRequest) returns (GetUserResponse);
+}
+
+message GetUserRequest {
+  int32 user_id = 1;
+}
+
+message GetUserResponse {
+  int32 user_id = 1;
+  string name = 2;
+  string email = 3;
+  bool found = 4;
+}

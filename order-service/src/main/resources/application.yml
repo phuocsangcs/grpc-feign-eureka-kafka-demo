@@ -1,0 +1,14 @@
+grpc:
+  server:
+    port: 9092
+  client:
+    # Tên "user-service" ở đây khớp với @GrpcClient("user-service") trong code
+    user-service:
+      address: 'static://localhost:9091'
+      negotiationType: PLAINTEXT
+      # Trong Kubernetes, thay bằng discovery qua DNS, ví dụ:
+      # address: 'dns:///user-service.default.svc.cluster.local:9091'
+
+spring:
+  application:
+    name: order-service
