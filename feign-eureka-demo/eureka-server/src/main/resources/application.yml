@@ -1,0 +1,15 @@
+server:
+  port: 8761
+
+spring:
+  application:
+    name: eureka-server
+
+eureka:
+  client:
+    # Server này chính nó KHÔNG cần đăng ký vào registry hay tra cứu registry khác
+    register-with-eureka: false
+    fetch-registry: false
+  server:
+    # Tắt chế độ tự bảo vệ để demo local phản ứng nhanh hơn (không dùng ở production)
+    enable-self-preservation: false

@@ -1,0 +1,15 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    # Tên này QUAN TRỌNG - order-service sẽ dùng đúng tên "user-service"
+    # để tra cứu qua Eureka, tương tự @GrpcClient("user-service") trước đây
+    name: user-service
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    prefer-ip-address: true

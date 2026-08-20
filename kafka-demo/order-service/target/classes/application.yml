@@ -1,0 +1,13 @@
+server:
+  port: 8082
+
+spring:
+  application:
+    name: order-service
+  kafka:
+    bootstrap-servers: localhost:9092
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      # Serialize object Java thành JSON tự động, tương đương protobuf
+      # binary bên gRPC nhưng dùng JSON (text, dễ đọc log/debug hơn)
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
